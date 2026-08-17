@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f172a">
+<title>Digital Transformation & Training Team | Field Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Cairo,sans-serif}
+
+body{
+  background:
+    radial-gradient(circle at top right, rgba(37,99,235,.22), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(16,185,129,.16), transparent 28%),
+    linear-gradient(135deg,#0f172a,#1e293b,#111827);
+  min-height:100vh;
+  padding:25px;
+  color:#fff
+}
+
+.container{max-width:1050px;margin:auto}
+
+.header{
+  text-align:center;
+  padding:38px 25px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:30px;
+  margin-bottom:25px;
+  box-shadow:0 18px 50px rgba(0,0,0,.18)
+}
+
+.logo{
+  width:64px;
+  height:64px;
+  margin:0 auto 15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2563eb,#10b981);
+  font-size:30px;
+  box-shadow:0 10px 30px rgba(37,99,235,.28)
+}
+
+.header h1{
+  font-size:clamp(24px,4vw,42px);
+  line-height:1.25
+}
+
+.header h2{
+  margin-top:8px;
+  font-size:clamp(18px,3vw,27px);
+  color:#93c5fd;
+  font-weight:700
+}
+
+.header p{
+  color:#cbd5e1;
+  margin-top:12px;
+  line-height:1.8
+}
+
+.section-title{
+  margin:30px 5px 14px;
+  font-size:20px;
+  font-weight:800;
+  color:#e2e8f0;
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:18px;
+  transition:.25s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.10)
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.08)
+}
+
+.title{
+  font-size:21px;
+  font-weight:800;
+  line-height:1.5
+}
+
+.desc{
+  color:#cbd5e1;
+  margin-top:7px;
+  line-height:1.7
+}
+
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  background:rgba(255,255,255,.08);
+  border-radius:50px;
+  margin-top:11px;
+  font-size:13px;
+  color:#93c5fd
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+  flex-wrap:wrap
+}
+
+.btn{
+  padding:12px 18px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:15px;
+  transition:.2s ease
+}
+
+.btn:hover{transform:translateY(-1px)}
+
+.open{background:#2563eb;color:#fff}
+.copy{background:#10b981;color:#fff}
+
+.footer{
+  text-align:center;
+  color:#94a3b8;
+  font-size:13px;
+  padding:20px 0 8px
+}
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#10b981;
+  color:#fff;
+  padding:12px 22px;
+  border-radius:12px;
+  display:none;
+  font-weight:700;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+  z-index:100
+}
+
+@media(max-width:600px){
+  body{padding:15px}
+  .header{padding:30px 18px}
+  .card{padding:18px}
+  .btn{width:100%}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">🚀</div>
+    <h1>Digital Transformation & Training Team</h1>
+    <h2>Field Team</h2>
+    <p>منصة داخلية سريعة للوصول إلى النماذج والأدوات والروابط الخاصة بفريق الـField.</p>
+  </div>
+
+  <div class="section-title">📍 Field Team — Daily Operations</div>
+  <div id="fieldCards"></div>
+
+  <div class="section-title">📚 Training & Team Resources</div>
+  <div id="resourceCards"></div>
+
+  <div class="footer">
+    Digital Transformation & Training Team • Field Team
+  </div>
+</div>
+
+<div id="toast" class="toast">✅ تم نسخ الرابط</div>
+
+<script>
+const fieldLinks = [
+  [
+    "📞",
+    "نموذج تقييم جودة التدريب (HQ Validation Call)",
+    "تسجيل ومتابعة مكالمات التحقق من جودة التدريب مع الـHQ.",
+    "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=01-Ga4qkH0-lsqhNwH1AY_se9DMAFFVPqmgTqGf73jNUQjZKWUQ3N1MwQUhFM09VVjVBVVYxVTFOMS4u"
+  ],
+  [
+    "📍",
+    "Digital Transformation & Training Daily Field Visit Form",
+    "تسجيل الزيارات الميدانية اليومية لفريق الـField.",
+    "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=01-Ga4qkH0-lsqhNwH1AY_se9DMAFFVPqmgTqGf73jNUMTQ0SUg5UU9DRDA2M1dJWDFGWEVJREdHQS4u"
+  ]
+];
+
+const resourceLinks = [
+  [
+    "📚",
+    "المادة التدريبية",
+    "محتوى التدريب والمواد التعليمية",
+    "https://halaninc.sharepoint.com/:f:/s/DigitalTransformation/IgDWTk4QMsmbSpGLRixEf8nLAev9XyY8fMEc7Lp-gE2ZhqQ?e=qnzcDI"
+  ],
+  [
+    "📊",
+    "شيت متابعة التعيينات الجديدة",
+    "متابعة حضور وتعيينات المتدربين",
+    "https://halaninc-my.sharepoint.com/:x:/g/personal/radwan_mohamed_halan_com/IQB0yvVIxfKEQK3K8LRPE43uAQpZZhc2Mfm_pnqEKGVP9q4?e=shH6sW"
+  ],
+  [
+    "📝",
+    "فورم تسجيل الجلسات",
+    "تسجيل حضور الجلسات التدريبية",
+    "https://forms.office.com/Pages/ResponsePage.aspx?id=01-Ga4qkH0-lsqhNwH1AY_se9DMAFFVPqmgTqGf73jNUNEpFMDBKWTI5UkZURTVINU9FUlYzR0FBOS4u"
+  ],
+  [
+    "📸",
+    "فورم رفع صورة الإقرار",
+    "رفع الإقرار بعد التوقيع",
+    "https://forms.office.com/Pages/ResponsePage.aspx?id=01-Ga4qkH0-lsqhNwH1AY_se9DMAFFVPqmgTqGf73jNUQkJLVlFFMVJVNzFCODNDQ0ZDMlJFQTYzVi4u"
+  ],
+  [
+    "⭐",
+    "فورم الاستبيان",
+    "تقييم التدريب وإرسال الملاحظات",
+    "https://forms.office.com/Pages/ResponsePage.aspx?id=01-Ga4qkH0-lsqhNwH1AY8gsqSDEqGNHpgphYf72EdBUQ01WMEo3Rk01NENKSFQ4RVMwOEYwSjM2VC4u"
+  ],
+  [
+    "🧠",
+    "فورم إختبار إتمام التدريب",
+    "الاختبار النهائي بعد إتمام التدريب",
+    "https://forms.office.com/r/tb4zE2gqpw"
+  ],
+  [
+    "⚠️",
+    "فورم حالات مخالفة قرار التحصيل",
+    "تسجيل ومتابعة حالات مخالفة قرار التحصيل",
+    "https://forms.office.com/r/3LA4CE2uqq"
+  ],
+  [
+    "👥",
+    "فورم تسجيل الأخصائيين الجدد غير المكودين",
+    "تسجيل الأخصائيين الجدد الذين لم يتم تكويدهم بعد",
+    "https://forms.office.com/r/hjFiXuDyqi"
+  ]
+];
+
+function renderCards(containerId, links){
+  const container = document.getElementById(containerId);
+
+  links.forEach((l) => {
+    container.innerHTML += `
+      <div class="card">
+        <div class="title">${l[0]} ${l[1]}</div>
+        <div class="desc">${l[2]}</div>
+        <div class="badge">رابط جاهز للفتح أو النسخ</div>
+
+        <div class="actions">
+          <button class="btn open" onclick="window.open('${l[3]}','_blank','noopener,noreferrer')">
+            فتح الرابط
+          </button>
+
+          <button class="btn copy" onclick="copyLink('${l[3]}')">
+            نسخ الرابط
+          </button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+function copyLink(link){
+  navigator.clipboard.writeText(link)
+    .then(() => showToast("✅ تم نسخ الرابط"))
+    .catch(() => showToast("⚠️ لم يتم النسخ تلقائيًا"));
+}
+
+function showToast(message){
+  const t = document.getElementById('toast');
+  t.textContent = message;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 2000);
+}
+
+renderCards('fieldCards', fieldLinks);
+renderCards('resourceCards', resourceLinks);
+</script>
+
+</body>
+</html>
